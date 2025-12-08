@@ -13,3 +13,9 @@ print(df.head())
 print(df.describe(include='all')) 
 print(df.isnull().sum())
 
+# Removing unnecessary columns  (for text (senti) analysis ,you need only reviews.txt and reviews.text )
+
+df=df[['reviews.text','reviews.rating']]
+print(df)
+
+
