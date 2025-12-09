@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as ans
+import seaborn as sns 
 
 from sklearn.linear_model import LinearRegression 
 from sklearn.linear_model import LogisticRegression
@@ -146,6 +146,21 @@ print("SVM Accuracy:", accuracy_score(y_test, pred_svm))
 print("\nClassification Report:\n", classification_report(y_test, pred_svm))
 print("\nConfusion Matrix:\n", confusion_matrix(y_test, pred_svm))
 
+
+## after code ############
+
+model_scores = {
+    "Logistic Regression": accuracy_score(y_test, pred),
+    "Naive Bayes": accuracy_score(y_test, pred_nb),
+    "SVM": accuracy_score(y_test, pred_svm)
+}
+
+plt.figure(figsize=(8,8))
+sns.barplot(x=list(model_scores.keys()), y=list(model_scores.values()), palette='rocket')
+plt.title("Model Accuracy Comparison")
+plt.ylabel("Accuracy")
+plt.ylim(0, 1)
+plt.show()
 
 
 
